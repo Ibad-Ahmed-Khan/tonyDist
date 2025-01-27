@@ -14,11 +14,100 @@
       href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Chatbot custom styles -->
+    <link rel="stylesheet" href="/chatbotstyles/bot.css" />
+    <link
+      rel="stylesheet"
+      href="https://webchat-styler-css.botpress.app/prod/code/727b232a-0aa3-4eab-862a-3e0c2ebf71a3/v94984/style.css"
+    />
+
     <title>Digital Fue</title>
     <script type="module" crossorigin src="/assets/index-BlGhfWYG.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-2O4YcIjo.css">
   </head>
   <body>
     <div id="root"></div>
+    <div id="bot-container"></div>
+    <!-- Add this line to display the bot -->
+
+
+    <!-- Botpress Webchat Integration -->
+    <script src="https://cdn.botpress.cloud/webchat/webchat.min.js"></script>
+    <script>
+      window.botpressWebChat.init({
+        botId: "690e6788-b4fb-4813-99ff-d8e6cc0a6674", // Use your bot's unique ID here
+        hostUrl: "https://botpress.cloud", // Or your Botpress server URL
+        messagingUrl: "https://digital-fue.pages.dev", // Your website URL
+        container: "#bot-container", // Make sure this matches the ID of the container element
+        configUrl:
+          "https://files.bpcontent.cloud/2025/01/27/12/20250127122534-TD9LJUYT.json",
+      });
+    </script>
+
+    <!-- Chatbot iframe with Botpress Webchat integration -->
+    <div class="webchat" style="height: 600px; width: 400px">
+      <iframe
+        style="height: 100%; width: 100%; border: none"
+        srcdoc='
+        <!doctype html>
+        <html lang="en">
+          <head></head>
+          <body>
+            <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+            <script defer>
+              window.botpress.on("webchat:ready", (conversationId) => {
+                botpress.open();
+              });
+
+              window.botpress.init({
+                "botId": "d3aea06d-0f04-4701-bec3-b457caf79902",
+                "configuration": {
+                  "website": {},
+                  "email": {},
+                  "phone": {},
+                  "termsOfService": {},
+                  "privacyPolicy": {},
+                  "color": "#3B82F6",
+                  "variant": "solid",
+                  "themeMode": "light",
+                  "fontFamily": "inter",
+                  "radius": 1
+                },
+                "clientId": "0e772c62-e321-46b5-a9fb-a88c5104e067"
+              });
+            </script>
+          </body>
+        </html>'
+      ></iframe>
+    </div>
+
+    <!-- Botpress Webchat Scripts -->
+    <script src="https://files.bpcontent.cloud/2025/01/27/12/20250127122533-NVZXA31K.js"></script>
+
+    <!-- Botpress Main Script -->
+    <script>
+      window.botpress.init({
+        botId: "d3aea06d-0f04-4701-bec3-b457caf79902",
+        configuration: {
+          website: {},
+          email: {},
+          phone: {},
+          termsOfService: {},
+          privacyPolicy: {},
+          color: "#3B82F6",
+          variant: "solid",
+          themeMode: "light",
+          fontFamily: "inter",
+          radius: 1,
+        },
+        clientId: "0e772c62-e321-46b5-a9fb-a88c5104e067",
+      });
+    </script>
+
+    <!-- <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/27/12/20250127122533-NVZXA31K.js"></script> -->
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/27/12/20250127122533-NVZXA31K.js"></script>
   </body>
 </html>
